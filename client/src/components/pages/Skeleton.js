@@ -27,7 +27,6 @@ class Skeleton extends Component {
             buttonText="Logout"
             onLogoutSuccess={this.props.handleLogout}
             onFailure={(err) => console.log(err)}
-            className="NavBar-link NavBar-login"
           />
         ) : (
           <GoogleLogin
@@ -35,7 +34,6 @@ class Skeleton extends Component {
             buttonText="Login"
             onSuccess={this.props.handleLogin}
             onFailure={(err) => console.log(err)}
-            className="NavBar-link NavBar-login"
           />
         )}
         <h1>Good luck on your project :)</h1>

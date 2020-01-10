@@ -1,22 +1,23 @@
 {
-  "name": "catbook-react",
+  "name": "weblab-skeleton",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
   "scripts": {
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
-    "start": "nodemon"
+    "start": "nodemon",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mit6148-workshops/catbook-react.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mit6148-workshops/catbook-react/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/mit6148-workshops/catbook-react#readme",
+  "homepage": "",
   "engines": {
     "node": ">=12.0.0"
   },
