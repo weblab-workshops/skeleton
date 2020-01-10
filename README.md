@@ -14,6 +14,7 @@
 - Change the Server Client_ID for Google Auth (auth.js)
 - Change the Database SRV for Atlas (server.js)
 - Change the Database Name for MongoDB (server.js)
+- Add a favicon to your website at the path client/src/public/favicon.ico
 - Update this README file ;)
 
 ## How to integrate into your own project
