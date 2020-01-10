@@ -1,18 +1,11 @@
 import React, { Component } from "react";
-import NavBar from "./modules/NavBar.js";
 import { Router } from "@reach/router";
-import Feed from "./pages/Feed.js";
 import NotFound from "./pages/NotFound.js";
-import Profile from "./pages/Profile.js";
-import Chatbook from "./pages/Chatbook.js";
+import Skeleton from "./pages/Skeleton.js";
 
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
-
-// to use styles, import the necessary CSS files
-import "../utilities.css";
-import "./App.css";
 
 /**
  * Define the "App" component as a class.
@@ -55,30 +48,18 @@ class App extends Component {
     post("/api/logout");
   };
 
-  // required method: whatever is returned defines what
-  // shows up on screen
   render() {
     return (
-      // <> is like a <div>, but won't show
-      // up in the DOM tree
       <>
-        <NavBar
-          handleLogin={this.handleLogin}
-          handleLogout={this.handleLogout}
-          userId={this.state.userId}
-        />
-        <div className="App-container">
-          <Router>
-            <Feed path="/" userId={this.state.userId} />
-            <Profile path="/profile/:userId" />
-            <Chatbook
-              path="/chat/"
-              userId={this.state.userId}
-              socketDisconnected={this.state.socketDisconnected}
-            />
-            <NotFound default />
-          </Router>
-        </div>
+        <Router>
+          <Skeleton
+            path="/"
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
+            userId={this.state.userId}
+          />
+          <NotFound default />
+        </Router>
       </>
     );
   }
