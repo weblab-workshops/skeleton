@@ -18,7 +18,6 @@ class App extends Component {
     super(props);
     this.state = {
       userId: undefined,
-      socketDisconnected: false,
     };
   }
 
@@ -28,11 +27,6 @@ class App extends Component {
         // they are registed in the database, and currently logged in.
         this.setState({ userId: user._id });
       }
-    });
-    socket.on("forceDisconnect", () => {
-      this.setState({
-        socketDisconnected: true,
-      });
     });
   }
 
