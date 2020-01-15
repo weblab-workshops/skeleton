@@ -35,7 +35,6 @@ Warning: make sure you copy the hidden files too: .babelrc, .gitignore, .npmrc, 
 the following files students do not need to edit. feel free to read them if you would like.
 
 ```
-client/dist/index.html
 client/src/index.js
 client/src/utilities.js
 client/src/client-socket.js
