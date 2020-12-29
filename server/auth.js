@@ -1,6 +1,6 @@
 const { OAuth2Client } = require("google-auth-library");
 const User = require("./models/user");
-const socket = require("./server-socket");
+const socketManager = require("./server-socket");
 
 // create a new OAuth client used to verify google sign-in
 //    TODO: replace with your own CLIENT_ID
