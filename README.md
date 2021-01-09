@@ -3,6 +3,7 @@
 ## What we provide
 
 - Google Auth (Skeleton.js & auth.js)
+  - Disclaimer: Auth isn't being taught until the second week.
 - Socket Infrastructure (client-socket.js & server-socket.js)
   - Disclaimer: Socket isn't being taught until the second week.
 - User Model (auth.js & user.js)
@@ -17,6 +18,7 @@
 - Add a favicon to your website at the path client/dist/favicon.ico
 - Update website title in client/dist/index.html
 - Update this README file ;)
+- Update the package.json file with your app name :) (line 2)
 
 ## Socket stuff
 Note: we'll be getting to this in lecture in week 2, so don't worry if you don't know it yet
