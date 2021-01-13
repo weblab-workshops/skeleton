@@ -4,7 +4,8 @@ import { get, post } from '../utilities'
 import NotFound from './pages/NotFound';
 import Skeleton from './pages/Skeleton';
 import { GoogleLoginResponse } from 'react-google-login';
-import { socket } from '../client-socket'
+import { socket } from '../client-socket';
+import User from '../../../shared/User';
 import "../utilities.css";
 
 type State = {
@@ -20,7 +21,7 @@ class App extends Component<{}, State> {
   }
 
   componentDidMount() {
-    get('/api/whoami').then((user) => {
+    get('/api/whoami').then((user: User) => {
       if (user._id) {
         // TRhey are registed in the database and currently logged in.
         this.setState({userId: user._id})
@@ -33,7 +34,7 @@ class App extends Component<{}, State> {
   handleLogin = (res: GoogleLoginResponse) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user) => {
+    post("/api/login", { token: userToken }).then((user: User) => {
       this.setState({ userId: user._id });
     });
   };

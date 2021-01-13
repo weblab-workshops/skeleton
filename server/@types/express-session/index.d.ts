@@ -1,6 +1,6 @@
-import { UserInterface } from "../../models/User";
+import User from "../../../shared/User";
 declare module "express-session" {
   interface Session {
-    user?: UserInterface;
+    user?: User;
   }
 }

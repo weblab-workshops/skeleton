@@ -43,6 +43,11 @@ In the backend, make sure that you include type signatures when needed.
 There are two tsconfig files, server-tsconfig.json and tsconfig.json. We use this approach to avoid having to make two package.json and two build directories. If there are special typescript features you want to enable, edit the corresponding file. 
 
 
+**Sharing interfaces**
+
+In the shared folder, you can create a shared interface between the frontend and backend. This is to make get and post requests typesafe. Make sure that the interface is in sync with the mongoose schema!
+
+
 **Note**
 
 

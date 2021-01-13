@@ -1,9 +1,6 @@
-import { UserInterface } from "../../models/User";
+import User from "../../../shared/User";
 declare module "express-serve-static-core" {
   interface Request {
-    user?: UserInterface;
-  }
-  interface Session {
-    user?: UserInterface;
+    user?: User;
   }
 }

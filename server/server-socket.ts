@@ -1,6 +1,6 @@
 import type http from "http";
 import { Server, Socket } from "socket.io";
-import { UserInterface as User } from "./models/User";
+import User from "../shared/User";
 let io: Server;
 
 const userToSocketMap: Map<string, Socket> = new Map<string, Socket>(); // maps user ID to socket object
