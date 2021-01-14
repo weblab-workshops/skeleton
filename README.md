@@ -45,7 +45,7 @@ There are two tsconfig files, server-tsconfig.json and tsconfig.json. We use thi
 
 **Sharing interfaces**
 
-In the shared folder, you can create a shared interface between the frontend and backend. This is to make get and post requests typesafe. Make sure that the interface is in sync with the mongoose schema!
+In the shared folder, you can export shared interfaces between the frontend and backend. This is to make get and post requests typesafe. Make sure that the interface is in sync with the mongoose schema! See server/models/User.ts. 
 
 
 **Note**
