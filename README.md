@@ -54,7 +54,7 @@ In the shared folder, you can export shared interfaces between the frontend and 
 
 
 When installing packages, you will also have to install their type signatures. If the TypeScript compiler
-is complaining that some package does not have any type signatures, make sure to do `npm install @types/nameOfPackageHere`.
+is complaining that some package does not have any type signatures, make sure to do `npm install @types/nameOfPackageHere`. Note that because Heroku deletes all the devDependencies after the build step, make sure to do `npm install dependencyThatTheServerNeeds`. In this setup, you should only include use `npm install somePackage --save-dev` on client-side devDependencies. 
 
 ## don't touch
 
