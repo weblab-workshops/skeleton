@@ -39,11 +39,10 @@ This branch is configured to use Typescript in both the frontend and backend.
 In the frontend, if you decide to use TS, you will need to define the Props and State interface for each component. 
 In the backend, make sure that you include type signatures when needed.
 
-There are two tsconfig files, server-tsconfig.json and tsconfig.json. We use this approach to avoid having to make two package.json and two build directories. If there are special typescript features you want to enable, edit the corresponding file. 
-
 If you want to come use a js server, change the "start" script of package.json to ` "start": "nodemon --ignore client/", ` instead of 
 `"TS_NODE_PROJECT='./server-tsconfig.json' nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/server.ts"`
 
+If you want to modify how TS is compiled, you should modify tsconfig.json or server-tsconfig.json for client side and server side changes respectively. We have two tsconfig files to maintain the structure of the original skeleton code, although a monorepo approach might be cleaner.
 
 
 **Sharing interfaces**
