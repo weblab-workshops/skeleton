@@ -42,7 +42,7 @@ In the backend, make sure that you include type signatures when needed.
 If you want to come use a js server, change the "start" script of package.json to ` "start": "nodemon --ignore client/", ` instead of 
 `"TS_NODE_PROJECT='./server-tsconfig.json' nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/server.ts"`
 
-If you want to modify how TS is compiled, you should modify tsconfig.json or server-tsconfig.json for client side and server side changes respectively. We have two tsconfig files to maintain the structure of the original skeleton code, although a monorepo approach might be cleaner.
+If you want to modify how TS is compiled, you should modify client-tsconfig.json or server-tsconfig.json for client side and server side changes respectively. We have two tsconfig files to maintain the structure of the original skeleton code, although a monorepo approach might be cleaner.
 
 
 **Sharing interfaces**
