@@ -24,7 +24,7 @@ const App = () => {
     });
   }, []);
 
-  handleLogin = (res) => {
+  const handleLogin = (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
@@ -33,7 +33,7 @@ const App = () => {
     });
   };
 
-  handleLogout = () => {
+  const handleLogout = () => {
     setUserId(undefined);
     post("/api/logout");
   };
