@@ -1,4 +1,4 @@
-## What you need to do to get started coding a webapp with this skeleton
+# How to code a webapp with this skeleton
 
 ## Initial setup
 
@@ -33,6 +33,8 @@ The files/folders you must drag over are:
   - README.md
   - server (folder)
   - webpack.config.js
+
+[Quick youtube demo on dragging the files](https://www.youtube.com/watch?v=7Q_xxowPW1c)
 
 Then, in terminal, navigate to your teams folder and push all of the files to your team's GitHub repository as usual:
    - git add -A
