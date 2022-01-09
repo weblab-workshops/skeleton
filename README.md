@@ -61,6 +61,9 @@ First, 'npm install'
 Then open two seperate terminals, and 'npm run hotloader' in the first, and 'npm start' in the second.
 Then open http://localhost:5000
 
+## How to go from this skeleton to your actual app
+Check out this [How to Get Started Guide](http://weblab.to/get-started)
+  
 ## Socket stuff
 Note: we'll be getting to this in lecture in week 2, so don't worry if you don't know it yet
 
