@@ -39,6 +39,8 @@ Then, in terminal, navigate to your teams folder and push all of the files to yo
    - git commit -m "Skeleton code"
    - git push 
 
+Now the rest of your teammates can pull all these files with a 'git pull'!
+
 Post on Piazza if you run into any issues
 
 ## What you need to change in the skeleton
