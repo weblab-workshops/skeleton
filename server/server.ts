@@ -55,9 +55,9 @@ app.use(express.static(reactPath));
 
 // Fallbacks
 
-// For any other route, let index.html and react router handle it.
-app.get("*", (_, res) => {
-  res.send({ msg: "hello world." });
+// for all other routes, render index.html and let react router handle it
+app.get("*", (req, res) => {
+  res.sendFile(path.join(reactPath, "index.html"));
 });
 
 // TODO(johancc) - Add an error interface.
