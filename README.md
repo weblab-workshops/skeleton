@@ -2,15 +2,15 @@
 
 ## Initial setup
 
-All teammates will need (explained in http://weblab.to/install)
+All teammates will need (explained in https://tinyurl.com/weblab-install-guide)
   - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
   - NodeJS version 16. If it is installed correctly, typing "node --version" should give v16.13.1 and "npm --version" should give 8.1.2
   - Visual Studio Code (or another code editor)
   - the Prettier VSCode extension
 
-Also, all of you will need to go through the MongoDB Atlas setup (http://weblab.to/mongo-setup). 
+Also, all of you will need to go through the MongoDB Atlas setup (https://tinyurl.com/weblab-mongo-guide). 
 
-Additionally for authentication, one of you will need to obtain a CLIENT_ID, instructions are at http://weblab.to/clientid 
+Additionally for authentication, one of you will need to obtain a CLIENT_ID, instructions are at https://tinyurl.com/weblab-googleauth-guide 
 
 ## Downloading these files
 
@@ -47,7 +47,7 @@ Post on Piazza if you run into any issues
 
 ## What you need to change in the skeleton
 
-- Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at http://weblab.to/clientid)
+- Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at https://tinyurl.com/weblab-googleauth-guide)
 - Change the Server CLIENT_ID to the same CLIENT_ID (auth.js) 
 - Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the MongoDB setup. remember to replace <password> and <dbname> (should be no < or > in your SRV)
 - Change the Database Name for MongoDB to whatever you put in the SRV to replace <dbname> (server.js)
