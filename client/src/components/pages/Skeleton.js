@@ -40,7 +40,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
         <li>Change the Database Name for MongoDB to whatever you put in the SRV (server.js)</li>
       </ul>
       <h2>How to go from this skeleton to our actual app</h2>
-      <a href="http://weblab.to/get-started">Check out this getting started guide</a>
+      <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">Check out this getting started guide</a>
     </>
   );
 };
