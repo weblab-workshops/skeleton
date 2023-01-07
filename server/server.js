@@ -78,24 +78,24 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(reactPath, "index.html"));
 });
 
-// // any server errors cause this function to run
-// app.use((err, req, res, next) => {
-//   const status = err.status || 500;
-//   if (status === 500) {
-//     // 500 means Internal Server Error
-//     console.log("The server errored when processing a request!");
-//     console.log(err);
-//   }
+// any server errors cause this function to run
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  if (status === 500) {
+    // 500 means Internal Server Error
+    console.log("The server errored when processing a request!");
+    console.log(err);
+  }
 
-//   res.status(status);
-//   res.send({
-//     status: status,
-//     message: err.message,
-//   });
-// });
+  res.status(status);
+  res.send({
+    status: status,
+    message: err.message,
+  });
+});
 
 // hardcode port to 3000 for now
-const port = 3000;
+const port = process.env.PORT || 3000;
 const server = http.Server(app);
 socketManager.init(server);
 
