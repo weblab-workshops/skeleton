@@ -42,11 +42,11 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'ts-loader',
+            loader: "ts-loader",
             options: {
-              configFile: 'client-tsconfig.json',
-            },    
-          }
+              configFile: "client-tsconfig.json",
+            },
+          },
         ],
       },
       {
@@ -76,7 +76,7 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     historyApiFallback: true,
-    contentBase: "./client/dist",
+    static: "./client/dist",
     hot: true,
     proxy: {
       "/api": "http://localhost:3000",
