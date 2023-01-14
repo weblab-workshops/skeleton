@@ -55,10 +55,10 @@ app.use(validator.checkRoutes);
 app.use(express.json());
 
 // set up a session, which will persist login data across requests
-// TODO: add a SESSION_SECRET string in your .env file
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    // TODO: add a SESSION_SECRET string in your .env file, and replace the secret with process.env.SESSION_SECRET
+    secret: "session-secret",
     resave: false,
     saveUninitialized: false,
   })
