@@ -69,7 +69,7 @@ Then open http://localhost:5050
 
 ## How to go from this skeleton to your actual app
 
-Check out this [How to Get Started Guide](http://weblab.to/get-started)
+Check out this [How to Get Started Guide](http://weblab.is/get-started)
 
 ## Socket stuff
 
