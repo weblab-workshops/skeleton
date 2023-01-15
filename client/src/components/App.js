@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
+import jwt_decode from "jwt-decode";
+
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 
@@ -24,9 +26,10 @@ const App = () => {
     });
   }, []);
 
-  const handleLogin = (res) => {
-    console.log(`Logged in as ${res.profileObj.name}`);
-    const userToken = res.tokenObj.id_token;
+  const handleLogin = (credentialResponse) => {
+    const userToken = credentialResponse.credential;
+    const decodedCredential = jwt_decode(userToken);
+    console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       post("/api/initsocket", { socketid: socket.id });
