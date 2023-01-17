@@ -5,7 +5,7 @@
 All teammates will need (explained in http://weblab.is/install)
 
 - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
-- NodeJS version 16. If it is installed correctly, typing "node --version" should give v16.13.1 and "npm --version" should give 8.1.2
+- NodeJS version 18. If it is installed correctly, typing "node --version" should give v18.13.0 and "npm --version" should give 8.19.3
 - Visual Studio Code (or another code editor)
 - the Prettier VSCode extension
 
