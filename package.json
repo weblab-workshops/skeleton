@@ -12,8 +12,8 @@
   "devDependencies": {
     "@types/reach__router": "^1.3.6",
     "@types/react-dom": "^18.0.10",
-    "@types/webpack": "^4.41.26",
-    "@types/webpack-env": "^1.16.0",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "css-loader": "^5.0.1",

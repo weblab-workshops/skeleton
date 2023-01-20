@@ -30,7 +30,7 @@ Note: we'll be getting to this in lecture in week 2, so don't worry if you don't
 ## How to integrate into your own project
 
 On GitHub download this repository as a zip file, then extract the files into your own repository.
-Warning: make sure you copy the hidden files too: .babelrc, .gitignore, .npmrc, and .prettierrc
+Warning: make sure you copy the hidden files too: .babelrc, .gitignore, .npmrc, .eslintignore, .eslintrc, and .prettierrc
 
 Note that you should create a `.env` file to store your secrets. You should have the mongo srv and session secret there. A session secret is just a secret string so the session library can encrypt session data. See `.env.example`.
 
