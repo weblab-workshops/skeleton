@@ -6,6 +6,6 @@ import App from "./components/App";
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // allows for live updating
-if (module.hot) {
+if (module.hot !== undefined) {
   module.hot.accept();
 }

@@ -44,7 +44,7 @@ module.exports = {
           {
             loader: "ts-loader",
             options: {
-              configFile: "client-tsconfig.json",
+              configFile: "tsconfig.json",
             },
           },
         ],

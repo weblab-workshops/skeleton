@@ -12,7 +12,7 @@ import api from "./api";
 dotenv.config({});
 
 // Server configuration below
-// TODO change connection URL after setting up your team database
+// TODO change connection URL after setting up your team database and creating the .env file
 const mongoConnectionURL = process.env.MONGO_SRV;
 // TODO change database name to the name you chose
 const databaseName = "IncludeYourDatabaseNameHere";
@@ -60,7 +60,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(reactPath, "index.html"));
 });
 
-// TODO(johancc) - Add an error interface.
+// Optional TODO (on your own) - Add an error interface.
 app.use((err: any, _req: Request, res: Response) => {
   const status = err.status || 500;
   if (status === 500) {

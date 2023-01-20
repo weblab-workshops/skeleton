@@ -21,11 +21,11 @@
 - Update the package.json file with your app name :) (line 2)
 
 ## Socket stuff
+
 Note: we'll be getting to this in lecture in week 2, so don't worry if you don't know it yet
 
 - If you're not using realtime updating or don't need server->client communication, you can remove socket entirely! (server-socket.js, client-socket.js, and anything that imports them)
 - If you are using socket, consider what you want to do with the FIXME in server-socket.js
-
 
 ## How to integrate into your own project
 
@@ -35,26 +35,24 @@ Warning: make sure you copy the hidden files too: .babelrc, .gitignore, .npmrc, 
 Note that you should create a `.env` file to store your secrets. You should have the mongo srv and session secret there. A session secret is just a secret string so the session library can encrypt session data. See `.env.example`.
 
 ## Typescript Instructions
+
 This branch is configured to use Typescript in both the frontend and backend.
-In the frontend, if you decide to use TS, you will need to define the Props and State interface for each component. 
+In the frontend, if you decide to use TS, you will need to define the Props and State interface for each component.
 In the backend, make sure that you include type signatures when needed.
 
-If you want to come use a js server, change the "start" script of package.json to ` "start": "nodemon --ignore client/", ` instead of 
-`"TS_NODE_PROJECT='./server-tsconfig.json' nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/server.ts"`
+If you want to come use a js server, change the "start" script of package.json to `"start": "nodemon --ignore client/",` instead of
+`"TS_NODE_PROJECT='./tsconfig.json' nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/server.ts"`
 
-If you want to modify how TS is compiled, you should modify client-tsconfig.json or server-tsconfig.json for client side and server side changes respectively. We have two tsconfig files to maintain the structure of the original skeleton code, although a monorepo approach might be cleaner.
-
+If you want to modify how TS is compiled, you should modify tsconfig.json.
 
 **Sharing interfaces**
 
-In the shared folder, you can export shared interfaces between the frontend and backend. This is to make get and post requests typesafe. Make sure that the interface is in sync with the mongoose schema! See server/models/User.ts. 
-
+In the shared folder, you can export shared interfaces between the frontend and backend. This is to make get and post requests typesafe. Make sure that the interface is in sync with the mongoose schema! See server/models/User.ts.
 
 **Note**
 
-
 When installing packages, you will also have to install their type signatures. If the TypeScript compiler
-is complaining that some package does not have any type signatures, make sure to do `npm install @types/nameOfPackageHere`. Note that because Heroku deletes all the devDependencies after the build step, make sure to do `npm install dependencyThatTheServerNeeds`. In this setup, you should only include use `npm install somePackage --save-dev` on client-side devDependencies. 
+is complaining that some package does not have any type signatures, make sure to do `npm install @types/nameOfPackageHere`. Note that because Heroku deletes all the devDependencies after the build step, make sure to do `npm install dependencyThatTheServerNeeds`. In this setup, you should only include use `npm install somePackage --save-dev` on client-side devDependencies.
 
 ## don't touch
 
@@ -67,7 +65,6 @@ client/src/client-socket.js
 server/validator.js
 server/server-socket.js
 tsconfig.json
-server-tsconfig.json
 .babelrc
 .npmrc
 .prettierrc

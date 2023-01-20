@@ -2,7 +2,7 @@ import React from "react";
 
 import { RouteComponentProps } from "@reach/router";
 
-type NotFoundProps = RouteComponentProps
+type NotFoundProps = RouteComponentProps;
 
 const NotFound = (props: NotFoundProps) => {
   return (
