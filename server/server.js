@@ -18,6 +18,9 @@
 const validator = require("./validator");
 validator.checkSetup();
 
+//allow us to use process.ENV
+require("dotenv").config();
+
 //import libraries needed for the webserver to work!
 const http = require("http");
 const express = require("express"); // backend framework for our node server.
@@ -33,9 +36,9 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "FILL ME IN";
+const mongoConnectionURL = process.env.MONGO_SRV;
 // TODO change database name to the name you chose
-const databaseName = "FILL ME IN";
+const databaseName = "FILL_ME_IN";
 
 // connect to mongodb
 mongoose
