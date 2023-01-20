@@ -40,7 +40,9 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">
         Check out this getting started guide
       </a>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline">
+        Tailwind css is working if this is a different style!
+      </h1>
     </GoogleOAuthProvider>
   );
 };
