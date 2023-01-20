@@ -1,35 +1,38 @@
 import React from "react";
-import GoogleLogin, {
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-  GoogleLogout,
-} from "react-google-login";
+import {
+  GoogleOAuthProvider,
+  GoogleLogin,
+  googleLogout,
+  CredentialResponse,
+} from "@react-oauth/google";
+
 import "./Skeleton.css";
 import { RouteComponentProps } from "@reach/router";
+
 //TODO(weblab student): REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "395785444978-7b9v7l0ap2h3308528vu1ddnt3rqftjc.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "FILL ME IN";
+
 type Props = RouteComponentProps & {
-  userId: String;
-  handleLogin: (res: GoogleLoginResponse | GoogleLoginResponseOffline) => void;
+  userId?: string;
+  handleLogin: (credentialResponse: CredentialResponse) => void;
   handleLogout: () => void;
 };
 const Skeleton = (props: Props) => {
+  const { handleLogin, handleLogout } = props;
+
   return (
-    <>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
       {props.userId ? (
-        <GoogleLogout
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Logout"
-          onLogoutSuccess={props.handleLogout}
-          onFailure={() => console.log(`Failed to logout.`)}
-        />
+        <button
+          onClick={() => {
+            googleLogout();
+            handleLogout();
+          }}
+        >
+          Logout
+        </button>
       ) : (
-        <GoogleLogin
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={props.handleLogin}
-          onFailure={(err) => console.log(err)}
-        />
+        <GoogleLogin onSuccess={handleLogin} onError={() => console.log("Error Logging in")} />
       )}
       <h1>Good luck on your project :)</h1>
       <h2> What we provide in this skeleton</h2>
@@ -48,7 +51,7 @@ const Skeleton = (props: Props) => {
         <li>Add a favicon to your website at the path client/dist/favicon.ico</li>
         <li>Update website title in client/dist/index.html</li>
       </ul>
-    </>
+    </GoogleOAuthProvider>
   );
 };
 

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
+import jwt_decode from "jwt-decode";
+import { CredentialResponse } from "@react-oauth/google";
+
 import { get, post } from "../utilities";
 import NotFound from "./pages/NotFound";
 import Skeleton from "./pages/Skeleton";
-import { GoogleLoginResponse, GoogleLoginResponseOffline } from "react-google-login";
 import { socket } from "../client-socket";
 import User from "../../../shared/User";
 import "../utilities.css";
 
 const App = () => {
-  const [userId, setUserId] = useState<String>(undefined);
+  const [userId, setUserId] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     get("/api/whoami")
@@ -26,11 +28,13 @@ const App = () => {
       );
   }, []);
 
-  const handleLogin = (res: GoogleLoginResponse) => {
-    console.log(`Logged in as ${res.profileObj.name}`);
-    const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user: User) => {
+  const handleLogin = (credentialResponse: CredentialResponse) => {
+    const userToken = credentialResponse.credential;
+    const decodedCredential = jwt_decode(userToken as string) as { name: string; email: string };
+    console.log(`Logged in as ${decodedCredential.name}`);
+    post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
+      post("/api/initsocket", { socketid: socket.id });
     });
   };
 
@@ -43,12 +47,7 @@ const App = () => {
   // All the pages need to have the props extended via RouteComponentProps for @reach/router to work properly. Please use the Skeleton as an example.
   return (
     <Router>
-      <Skeleton
-        path="/"
-        handleLogin={handleLogin as (res: GoogleLoginResponse | GoogleLoginResponseOffline) => void}
-        handleLogout={handleLogout}
-        userId={userId}
-      />
+      <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <NotFound default={true} />
     </Router>
   );
