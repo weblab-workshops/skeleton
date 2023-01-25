@@ -4,7 +4,7 @@
   "description": "Typescript starter template for weblab students",
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5050",
-    "start": "nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/server.ts",
+    "start": "nodemon --watch server/**/*.ts --exec ts-node server/server.ts",
     "build": "webpack --config ./webpack.config.js --mode production"
   },
   "author": "johanc",
