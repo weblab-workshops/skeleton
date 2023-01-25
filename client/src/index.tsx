@@ -1,9 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./components/App";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-// renders React Component "Root" into the DOM element with ID "root"
-ReactDOM.render(<App />, document.getElementById("root"));
+const container: HTMLElement | null = document.getElementById("root");
+if (container) {
+  const root = createRoot(container);
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
 
 // allows for live updating
 if (module.hot !== undefined) {

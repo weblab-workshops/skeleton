@@ -1,10 +1,6 @@
 import React from "react";
 
-import { RouteComponentProps } from "@reach/router";
-
-type NotFoundProps = RouteComponentProps;
-
-const NotFound = (props: NotFoundProps) => {
+const NotFound = () => {
   return (
     <div>
       <h1>The page you are looking for is in another castle!</h1>
