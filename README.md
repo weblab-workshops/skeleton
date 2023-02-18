@@ -2,16 +2,16 @@
 
 ## Initial setup
 
-All teammates will need (explained in http://weblab.is/install)
+All teammates will need (explained in https://bit.ly/weblab-install)
 
 - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
 - NodeJS version 18. If it is installed correctly, typing "node --version" should give v18.13.0 and "npm --version" should give 8.19.3
 - Visual Studio Code (or another code editor)
 - the Prettier VSCode extension
 
-Also, all of you will need to go through the MongoDB Atlas setup (http://weblab.is/mongo-setup).
+Also, all of you will need to go through the MongoDB Atlas setup (https://bit.ly/mongo-setup).
 
-Additionally for authentication, one of you will need to obtain a CLIENT_ID, instructions are at http://weblab.is/gauth.
+Additionally for authentication, one of you will need to obtain a CLIENT_ID, instructions are at https://bit.ly/gauth-mit.
 
 ## Downloading these files
 
@@ -52,7 +52,7 @@ Post on Piazza if you run into any issues
 
 ## What you need to change in the skeleton
 
-- Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at http://weblab.is/gauth)
+- Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at https://bit.ly/gauth-mit)
 - Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)
 - Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the MongoDB setup. remember to replace <password> and <dbname> (should be no < or > in your SRV)
 - Change the Database Name for MongoDB to whatever you put in the SRV to replace <dbname> (server.js)
