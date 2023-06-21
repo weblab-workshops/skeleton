@@ -27,7 +27,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       <ul>
         <li>
           Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at
-          http://weblab.us/clientid)
+          http://weblab.is/clientid)
         </li>
         <li>Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)</li>
         <li>
