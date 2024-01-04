@@ -59,7 +59,7 @@ Post on Piazza if you run into any issues
 ## How to run this skeleton
 First, 'npm install'
 Then open two seperate terminals, and 'npm run hotloader' in the first, and 'npm start' in the second.
-Then open http://localhost:5000
+Then open http://localhost:5050
 
 ## How to go from this skeleton to your actual app
 Check out this [How to Get Started Guide](http://weblab.to/get-started)
