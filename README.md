@@ -36,8 +36,6 @@ The files/folders you must drag over are:
 - server (folder)
 - webpack.config.js
 
-[Quick youtube demo on dragging the files](https://www.youtube.com/watch?v=7Q_xxowPW1c)
-
 Additionally, you must create a .env file in the root directory. See .env.example for an example of what this file should look like.
 
 Then, in terminal, navigate to your teams folder and push all of the files to your team's GitHub repository as usual:
