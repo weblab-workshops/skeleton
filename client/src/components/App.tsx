@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Router } from "@reach/router";
 import jwt_decode from "jwt-decode";
 import { CredentialResponse } from "@react-oauth/google";
+import { Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { get, post } from "../utilities";
 import NotFound from "./pages/NotFound";
@@ -46,10 +47,12 @@ const App = () => {
   // NOTE:
   // All the pages need to have the props extended via RouteComponentProps for @reach/router to work properly. Please use the Skeleton as an example.
   return (
-    <Router>
-      <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-      <NotFound default={true} />
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Skeleton handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />} path="/"/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

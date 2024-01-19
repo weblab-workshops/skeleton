@@ -10,7 +10,6 @@
   "author": "johanc",
   "license": "MIT",
   "devDependencies": {
-    "@types/reach__router": "^1.3.6",
     "@types/react-dom": "^18.0.10",
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.18.0",
@@ -19,6 +18,7 @@
     "css-loader": "^5.0.1",
     "eslint": "^8.32.0",
     "eslint-plugin-react": "^7.32.1",
+    "prettier": "^3.2.4",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.14",
     "url-loader": "^4.1.1",
@@ -27,7 +27,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@reach/router": "^1.3.4",
     "@react-oauth/google": "^0.6.0",
     "@types/express": "^4.17.10",
     "@types/express-session": "^1.17.3",
@@ -40,8 +39,10 @@
     "mongoose": "^5.11.11",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "react": "^16.x",
-    "react-dom": "^16.x",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.21.3",
+    "react-router-dom": "^6.21.3",
     "socket.io": "^4.5.4",
     "socket.io-client": "^3.0.5",
     "ts-node": "^10.9.1",

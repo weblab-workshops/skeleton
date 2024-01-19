@@ -7,12 +7,11 @@ import {
 } from "@react-oauth/google";
 
 import "./Skeleton.css";
-import { RouteComponentProps } from "@reach/router";
 
 //TODO(weblab student): REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "FILL ME IN";
 
-type Props = RouteComponentProps & {
+type Props = {
   userId?: string;
   handleLogin: (credentialResponse: CredentialResponse) => void;
   handleLogout: () => void;
