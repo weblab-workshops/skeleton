@@ -49,7 +49,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Skeleton handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />} path="/"/>
+        <Route
+          element={
+            <Skeleton handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+          }
+          path="/"
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
