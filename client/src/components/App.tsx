@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { CredentialResponse } from "@react-oauth/google";
-import { Route, Routes } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { get, post } from "../utilities";
 import NotFound from "./pages/NotFound";
