@@ -12,16 +12,6 @@ const express = require("express");
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
-//initialize socket
-const socketManager = require("./server-socket");
-
-router.post("/initsocket", (req, res) => {
-  // do nothing if user not logged in
-  if (req.user)
-    socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
-  res.send({});
-});
-
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|

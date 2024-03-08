@@ -13,8 +13,6 @@ import { get, post } from "../utilities";
  * Define the "App" component
  */
 const App = () => {
-  const [userId, setUserId] = useState(undefined);
-
   return (
     <Routes>
       <Route path="/" element={<h1>Allston Brighton CDC Data Visualization</h1>} />
