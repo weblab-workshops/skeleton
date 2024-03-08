@@ -29,7 +29,6 @@ const mongoose = require("mongoose"); // library to connect to MongoDB
 const path = require("path"); // provide utilities for working with file and directory paths
 
 const api = require("./api");
-const auth = require("./auth");
 
 // socket stuff
 const socketManager = require("./server-socket");
@@ -69,9 +68,6 @@ app.use(
     saveUninitialized: false,
   })
 );
-
-// this checks if the user is logged in, and populates "req.user"
-app.use(auth.populateCurrentUser);
 
 // connect user-defined routes
 app.use("/api", api);
