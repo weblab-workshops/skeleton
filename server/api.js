@@ -10,7 +10,8 @@
 const express = require("express");
 
 // import models so we can interact with the database
-const User = require("./models/user");
+const User = require("./models/user");  
+const Definition = require("./models/definition");
 
 // import authentication library
 const auth = require("./auth");
@@ -31,6 +32,12 @@ router.get("/whoami", (req, res) => {
 
   res.send(req.user);
 });
+
+router.get("/definitions", (req, res) => {
+  req.language
+  req.query
+}
+)
 
 router.post("/initsocket", (req, res) => {
   // do nothing if user not logged in
