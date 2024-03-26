@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import jwt_decode from "jwt-decode";
-
-import Home from "./pages/Home.js";
-import NavBar from "./modules/NavBar.js";
-import Footer from "./modules/Footer.js";
-import NotFound from "./pages/NotFound.js";
-// import Skeleton from "./pages/Skeleton.js";
-
-// import "../utilities.css";
-import "../index.css";
-
 import { socket } from "../client-socket.js";
-
 import { get, post } from "../utilities";
 
-/**
- * Define the "App" component
- */
+import NavBar from "./modules/NavBar.js";
+import Home from "./pages/Home.js";
+import Searches from "./pages/Searches.js";
+import Footer from "./modules/Footer.js";
+import NotFound from "./pages/NotFound.js";
+import "../index.css";
+
 const App = () => {
   const [userId, setUserId] = useState(undefined);
 
@@ -52,6 +44,7 @@ const App = () => {
       <div class="App-container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/searches/" element={<Searches />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

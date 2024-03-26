@@ -11,6 +11,7 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
+const Search = require("./models/search");
 
 // import authentication library
 const auth = require("./auth");
@@ -30,6 +31,11 @@ router.get("/whoami", (req, res) => {
   }
 
   res.send(req.user);
+});
+
+// Definition
+router.get("/searches", (req, res) => {
+  Search.find({}).then((searches) => res.send(searches));
 });
 
 router.post("/initsocket", (req, res) => {

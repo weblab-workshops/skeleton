@@ -2,11 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
+// Importes images
+import MainLogo from "../images/MainLogo.webp";
+
 const Footer = () => {
   return (
       <footer className="Footer-container">
           <div className="Footer-main">
             <section className="Footer-item Footer-item1">
+                <img
+                    className = "Home-logo-img"
+                    src={MainLogo}
+                    alt="Main logo of Wopanaak Language Reclamation project"
+                />
                 <h1>Wôpanaâk Language Dictionary</h1>
                 <p>
                     Bringing back our language one student at time

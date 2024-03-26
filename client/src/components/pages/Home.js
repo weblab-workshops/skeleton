@@ -17,7 +17,8 @@ const Home = () => {
             <img
                 className = "Home-logo-img"
                 src={MainLogo}
-                alt="Main logo of Wopanaak Language Reclamation project" />
+                alt="Main logo of Wopanaak Language Reclamation project"
+            />
         </section>
 
         {/* Search bar */}
