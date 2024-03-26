@@ -21,13 +21,18 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
-
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
       }
+    });
+  }, []);
+
+  useEffect(() => {
+    get("/api/definitions", {language: "Wôpanaâk only", search:"âahkeeôm8wâhs"}).then((definitions) => {
+      console.log(definitions);
     });
   }, []);
 
@@ -45,6 +50,8 @@ const App = () => {
     setUserId(undefined);
     post("/api/logout");
   };
+  console.log("hi");
+
 
   return (
     <>

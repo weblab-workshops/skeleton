@@ -34,8 +34,14 @@ router.get("/whoami", (req, res) => {
 });
 
 router.get("/definitions", (req, res) => {
-  req.language
-  req.query
+  language = req.query.language;
+  search = req.query.search;
+  if (language == "Wôpanaâk only"){
+    Definition.find({"Lemma.LemmaSign": {$regex: search, $options: "i"}}).then((definitions) => res.send(definitions));
+  }
+  else if (language == "English only"){
+    Definition.find({Sense: {TE: {"TE.TE": {$regex: search, $options: "i"}}}}).then((definitions) => res.send(definitions));
+  }
 }
 )
 

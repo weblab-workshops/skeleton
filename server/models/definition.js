@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const DefinitionSchema = new mongoose.Schema({
-  "Lemma.LemmaSign": String,
+  "Lemma.LemmaSign": String, //word
   Sense: {
     TE: {
-        "TE.TE": String
+        "TE.TE": String  // translation
     },
     Example: {
         "Example.Example": String,
@@ -14,7 +14,7 @@ const DefinitionSchema = new mongoose.Schema({
   },
   "Lemma.Etymology": String,
 },
-{ collection: "definitions" }
+{}
 
 );
 
