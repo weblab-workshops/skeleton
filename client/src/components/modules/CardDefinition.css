@@ -1,0 +1,21 @@
+.CardDefinition-container{
+    padding : 30px 40px 50px;
+    display : flex;
+    flex-direction : column;
+    gap : 30px;
+    color : #3e3e3e;
+    background-color : #fff;
+    max-width : 1200px;
+    border : 1px solid #ddd;
+    margin : 40px auto;
+    border-radius : 5px;
+}
+
+.CardDefinition-ety{
+    padding : 5px 0;
+}
+
+.CardDefinition-example > p{
+    padding : 5px 0;
+    line-height : 22px;
+}

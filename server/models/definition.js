@@ -1,8 +1,19 @@
 const mongoose = require("mongoose");
 
-//Definition schema
 const DefinitionSchema = new mongoose.Schema({
-  creator_id: String,
-  content : String,
+  "Lemma.LemmaSign": String,
+  Sense: {
+    Example: {
+      'Example.Example': String,
+      'Example.Translation': String,
+      'Example.Source': String
+    },
+    TE: {
+      "TE.TE": String
+    }
+  },
+  "Lemma.Etymology": String,
+
 });
-module.exports = mongoose.model("Definitions", DefinitionSchema);
+
+module.exports = mongoose.model("definition", DefinitionSchema);

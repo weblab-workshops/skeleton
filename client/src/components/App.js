@@ -7,6 +7,7 @@ import { get, post } from "../utilities";
 import NavBar from "./modules/NavBar.js";
 import Home from "./pages/Home.js";
 import Searches from "./pages/Searches.js";
+import Definitions from "./pages/Definitions.js";
 import Footer from "./modules/Footer.js";
 import NotFound from "./pages/NotFound.js";
 import "../index.css";
@@ -41,10 +42,11 @@ const App = () => {
   return (
     <>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-      <div class="App-container">
+      <div className="App-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/searches/" element={<Searches />} />
+          <Route path="/searches" element={<Searches />} />
+          <Route path="/definitions" element={<Definitions />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
