@@ -1,4 +1,5 @@
 // Searches.js
+
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { get } from "../../utilities";
@@ -9,6 +10,7 @@ const Searches = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   // Searches.js
+
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     let query = searchParams.get("q") || "";
@@ -18,6 +20,7 @@ const Searches = () => {
         console.error('Error fetching search results:', error);
     });
   }, [location.search]);
+
 
   return (
     <div>
