@@ -1,0 +1,8 @@
+.NotFound-container{
+    padding: 100px 0;
+    text-align : center;
+}
+
+.NotFound-container > h1{
+    padding : 20px 0;
+}

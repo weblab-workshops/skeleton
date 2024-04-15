@@ -1,0 +1,37 @@
+.Searches-container{
+    max-width : 1100px;
+    margin : auto;
+    padding : 50px 0;
+}
+
+.Searches-title{
+    color : #555;
+}
+
+.Searches-results{
+    display : flex;
+    gap : 20px;
+    flex-direction : column;
+    padding : 30px 0;
+}
+
+.Searches-result{
+    display : block;
+    background-color : #fff;
+    border : 1px solid #ddd;
+    border-radius : 5px;
+    padding : 20px;
+}
+
+.Searches-result:hover{
+    background-color : #f6f7f7;
+}
+
+.Searches-result > p{
+    padding : 3px 0;
+    font-size : 17px;
+}
+
+.Searches-bold{
+    font-weight : bold;
+}
