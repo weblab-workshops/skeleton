@@ -22,7 +22,6 @@ body{
 
 a{
     text-decoration: none;
-    color: #000;
 }
 
 li{
@@ -33,12 +32,11 @@ li{
 .NavBar-container{
     position : fixed;
     width : 100%;
-    height : 55px;
+    height : 50px;
     background-color : #fff;
     border-bottom : 1px solid #ddd;
-    display : flex;
 }
 
 .App-container{
-    padding-top : 55px;
+    padding-top : 50px;
 }

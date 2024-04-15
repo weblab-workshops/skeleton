@@ -50,7 +50,7 @@ router.get("/searches", async (req, res) => {
     const query = {
       $or: [
         { LemmaSign: { $regex: regex } },
-        { "Sense.TE.TE": { $regex: regex } }
+        // { "Sense.TE.TE": { $regex: regex } }
       ]
     };
     const definitions = await Definition.find(query);

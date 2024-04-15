@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from "react-router-dom";
 
 // Imported CSS files
 import "./Home.css";
@@ -9,16 +9,9 @@ import MainLogo from "../images/MainLogo.webp";
 
 
 const Home = () => {
-    const navigate = useNavigate();
-    const [searchTerm, setSearchTerm] = useState('');
-    const handleSearch = (event) => {
-        event.preventDefault();
-        if (searchTerm.trim()) {
-            navigate(`/searches?q=${encodeURIComponent(searchTerm)}`);
-        }
-    };
   return (
     <div className="Home-container">
+
         {/* Logo at the top */}
         <section className="Home-logo">
             <img
@@ -30,7 +23,7 @@ const Home = () => {
 
         {/* Search bar */}
         <section className="Home-search">
-            <form className="Home-search-container" onSubmit={handleSearch}>
+            <section className="Home-search-container">
                 <select className="Home-search-select">
                     <option value="">All Languages</option>
                     <option value="">English only</option>
@@ -40,10 +33,8 @@ const Home = () => {
                     className="Home-search-bar"
                     type="search"
                     placeholder="Search..."
-                    value={searchTerm}
-                    onChange={e => setSearchTerm(e.target.value)}
                 />
-            </form>
+            </section>
         </section>
 
         {/* Information about the Wopanaak tribe and langauge */}

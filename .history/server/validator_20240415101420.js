@@ -1,9 +1,22 @@
 const fs = require("fs");
 const net = require("net");
 
+/**
+ * Provides some basic checks to make sure you've
+ * correctly set up your repository.
+ *
+ * You normally shouldn't need to modify this file.
+ *
+ * Curent checks:
+ * - node_modules exists
+ * - makes sure 'npx webpack' was called if required
+ * - warns if visiting port 3000 while running hot reloader
+ */
+
 class NodeSetupError extends Error {}
 let routeChecked = false;
 
+// poke port 5050 to see if 'npm run hotloader' was possibly called
 function checkHotLoader() {
   return new Promise((resolve, reject) => {
     var server = net.createServer();
@@ -29,6 +42,7 @@ module.exports = {
 
   checkRoutes: (req, res, next) => {
     if (!routeChecked && req.url === "/") {
+      // if the server receives a request on /, we must be on port 3000 not 5050
       if (!fs.existsSync("./client/dist/bundle.js")) {
         throw new NodeSetupError(
           "Couldn't find bundle.js! If you want to run the hot reloader, make sure 'npm run hotloader'\n" +
@@ -46,7 +60,7 @@ module.exports = {
         }
       });
 
-      routeChecked = true;
+      routeChecked = true; // only runs once to avoid spam/overhead
     }
     next();
   },
