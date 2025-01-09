@@ -2,7 +2,7 @@
 
 ## Initial setup
 
-All teammates will need (explained in https://bit.ly/weblab-install)
+All teammates will need (explained in weblab.is/hw0)
 
 - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
 - NodeJS version 18. If it is installed correctly, typing "node --version" should give v18.13.0 and "npm --version" should give 8.19.3, or higher.
