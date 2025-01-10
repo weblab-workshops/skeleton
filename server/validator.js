@@ -9,14 +9,13 @@ const net = require("net");
  *
  * Curent checks:
  * - node_modules exists
- * - makes sure 'npx webpack' was called if required
  * - warns if visiting port 3000 while running hot reloader
  */
 
 class NodeSetupError extends Error {}
 let routeChecked = false;
 
-// poke port 5050 to see if 'npm run hotloader' was possibly called
+// poke port 5173 to see if 'npm run dev' was possibly called
 function checkHotLoader() {
   return new Promise((resolve, reject) => {
     var server = net.createServer();
@@ -27,7 +26,7 @@ function checkHotLoader() {
 
     server.once("listening", () => server.close());
     server.once("close", () => resolve(false));
-    server.listen(5050);
+    server.listen(5173);
   });
 }
 
@@ -42,20 +41,11 @@ module.exports = {
 
   checkRoutes: (req, res, next) => {
     if (!routeChecked && req.url === "/") {
-      // if the server receives a request on /, we must be on port 3000 not 5050
-      if (!fs.existsSync("./client/dist/bundle.js")) {
-        throw new NodeSetupError(
-          "Couldn't find bundle.js! If you want to run the hot reloader, make sure 'npm run hotloader'\n" +
-            "is running and then go to http://localhost:5050 instead of port 3000.\n" +
-            "If you're not using the hot reloader, make sure to run 'npx webpack' before visiting this page"
-        );
-      }
-
       checkHotLoader().then((active) => {
         if (active) {
           console.log(
-            "Warning: It looks like 'npm run hotloader' may be running. Are you sure you don't want\n" +
-              "to use the hot reloader? To use it, visit http://localhost:5050 and not port 3000"
+            "Warning: It looks like 'npm run dev' may be running. Are you sure you don't want\n" +
+              "to use the hot reloader? To use it, visit http://localhost:5173 and not port 3000"
           );
         }
       });

@@ -5,7 +5,7 @@
 All teammates will need (explained in https://bit.ly/weblab-install)
 
 - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
-- NodeJS version 18. If it is installed correctly, typing "node --version" should give v18.13.0 and "npm --version" should give 8.19.3
+- NodeJS version 18. If it is installed correctly, typing "node --version" should give v18.13.0 and "npm --version" should give 8.19.3, or higher.
 - Visual Studio Code (or another code editor)
 - the Prettier VSCode extension
 
@@ -25,7 +25,6 @@ Then, drag over all of the files in this skeleton into your team's folder. **Mak
 
 The files/folders you must drag over are:
 
-- .babelrc (hidden)
 - .gitignore (hidden)
 - .npmrc (hidden)
 - .prettierrc (hidden)
@@ -34,7 +33,7 @@ The files/folders you must drag over are:
 - package.json
 - README.md
 - server (folder)
-- webpack.config.js
+- vite.config.js
 
 Additionally, you must create a .env file in the root directory. See .env.example for an example of what this file should look like.
 
@@ -62,8 +61,8 @@ Post on Piazza if you run into any issues
 ## How to run this skeleton
 
 First, 'npm install'
-Then open two seperate terminals, and 'npm run hotloader' in the first, and 'npm start' in the second.
-Then open http://localhost:5050
+Then open two separate terminals, and 'npm run dev' in the first, and 'npm start' in the second.
+Then open http://localhost:5173
 
 <!-- ## How to go from this skeleton to your actual app
 
@@ -81,16 +80,14 @@ Note: we'll be getting to this in lecture in week 2, so don't worry if you don't
 the following files students do not need to edit. feel free to read them if you would like.
 
 ```
-client/src/index.js
 client/src/utilities.js
 client/src/client-socket.js
 server/validator.js
 server/server-socket.js
-.babelrc
 .npmrc
 .prettierrc
 package-lock.json
-webpack.config.js
+vite.config.js
 ```
 
 ## Good luck on your project :)

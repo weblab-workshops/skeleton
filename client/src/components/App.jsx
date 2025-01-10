@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, createContext } from "react";
+import { Outlet } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
-import NotFound from "./pages/NotFound.js";
-import Skeleton from "./pages/Skeleton.js";
-
 import "../utilities.css";
 
-import { socket } from "../client-socket.js";
+import { socket } from "../client-socket";
 
 import { get, post } from "../utilities";
+
+export const UserContext = createContext(null);
 
 /**
  * Define the "App" component
@@ -42,21 +41,16 @@ const App = () => {
     post("/api/logout");
   };
 
+  const authContextValue = {
+    userId,
+    handleLogin,
+    handleLogout,
+  };
+
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Skeleton
-            path="/"
-            handleLogin={handleLogin}
-            handleLogout={handleLogout}
-            userId={userId}
-          />
-        }
-      />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <UserContext.Provider value={authContextValue}>
+      <Outlet />
+    </UserContext.Provider>
   );
 };
 
