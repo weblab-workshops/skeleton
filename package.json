@@ -3,28 +3,24 @@
   "version": "1.0.0",
   "description": "Typescript starter template for weblab students",
   "scripts": {
-    "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5050",
+    "dev": "vite",
     "start": "nodemon --watch 'server/**/*.ts' --exec ts-node server/server.ts",
-    "build": "webpack --config ./webpack.config.js --mode production"
+    "preview": "vite preview",
+    "build": "vite build"
   },
   "author": "johanc",
   "license": "MIT",
   "devDependencies": {
     "@types/react-dom": "^18.0.10",
-    "@types/webpack": "^5.28.0",
-    "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
-    "css-loader": "^5.0.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
     "eslint": "^8.32.0",
     "eslint-plugin-react": "^7.32.1",
     "prettier": "^3.2.4",
-    "style-loader": "^2.0.0",
     "ts-loader": "^8.0.14",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "vite": "^4.0.0",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "dependencies": {
     "@react-oauth/google": "^0.6.0",
@@ -36,7 +32,7 @@
     "express-session": "^1.17.1",
     "google-auth-library": "^6.1.4",
     "jwt-decode": "^3.1.2",
-    "mongoose": "^5.11.11",
+    "mongoose": "^7.8.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "react": "^18.2.0",

@@ -15,15 +15,13 @@ dotenv.config({});
 // TODO change connection URL after setting up your team database and creating the .env file
 const mongoConnectionURL = process.env.MONGO_SRV;
 // TODO change database name to the name you chose
-const databaseName = "IncludeYourDatabaseNameHere";
+const databaseName = "Cluster0";
 
 if (mongoConnectionURL === undefined) {
   throw new Error("Please add the MongoDB connection SRV as 'MONGO_SRV'");
 }
 mongoose
   .connect(mongoConnectionURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     dbName: databaseName,
   })
   .then(() => console.log("Connected to MongoDB"))
